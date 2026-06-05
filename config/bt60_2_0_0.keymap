@@ -29,7 +29,7 @@
         = <&macro_tap &to LINUX>
         , <&macro_tap &rgb_ug RGB_ON>
         , <&macro_tap &rgb_ug RGB_EFS_CMD 0>
-        , <&macro_tap &rgb_ug RGB_COLOR_HSB(0,0,100)>;
+        , <&macro_tap &rgb_ug RGB_COLOR_HSB(220,25,70)>;
     };
 
     mac_mode: mac_mode {
@@ -42,7 +42,127 @@
         = <&macro_tap &to MAC>
         , <&macro_tap &rgb_ug RGB_ON>
         , <&macro_tap &rgb_ug RGB_EFS_CMD 0>
-        , <&macro_tap &rgb_ug RGB_COLOR_HSB(280,100,100)>;
+        , <&macro_tap &rgb_ug RGB_COLOR_HSB(300,100,80)>;
+    };
+
+    tty1: tty1 {
+      label = "TTY1";
+      compatible = "zmk,behavior-macro";
+      #binding-cells = <0>;
+      wait-ms = <20>;
+      tap-ms = <20>;
+      bindings
+        = <&macro_press &kp LCTRL &kp LALT>
+        , <&macro_tap &kp F1>
+        , <&macro_release &kp LALT &kp LCTRL>;
+    };
+
+    tty2: tty2 {
+      label = "TTY2";
+      compatible = "zmk,behavior-macro";
+      #binding-cells = <0>;
+      wait-ms = <20>;
+      tap-ms = <20>;
+      bindings
+        = <&macro_press &kp LCTRL &kp LALT>
+        , <&macro_tap &kp F2>
+        , <&macro_release &kp LALT &kp LCTRL>;
+    };
+
+    tty3: tty3 {
+      label = "TTY3";
+      compatible = "zmk,behavior-macro";
+      #binding-cells = <0>;
+      wait-ms = <20>;
+      tap-ms = <20>;
+      bindings
+        = <&macro_press &kp LCTRL &kp LALT>
+        , <&macro_tap &kp F3>
+        , <&macro_release &kp LALT &kp LCTRL>;
+    };
+
+    tty4: tty4 {
+      label = "TTY4";
+      compatible = "zmk,behavior-macro";
+      #binding-cells = <0>;
+      wait-ms = <20>;
+      tap-ms = <20>;
+      bindings
+        = <&macro_press &kp LCTRL &kp LALT>
+        , <&macro_tap &kp F4>
+        , <&macro_release &kp LALT &kp LCTRL>;
+    };
+
+    tty5: tty5 {
+      label = "TTY5";
+      compatible = "zmk,behavior-macro";
+      #binding-cells = <0>;
+      wait-ms = <20>;
+      tap-ms = <20>;
+      bindings
+        = <&macro_press &kp LCTRL &kp LALT>
+        , <&macro_tap &kp F5>
+        , <&macro_release &kp LALT &kp LCTRL>;
+    };
+
+    tty6: tty6 {
+      label = "TTY6";
+      compatible = "zmk,behavior-macro";
+      #binding-cells = <0>;
+      wait-ms = <20>;
+      tap-ms = <20>;
+      bindings
+        = <&macro_press &kp LCTRL &kp LALT>
+        , <&macro_tap &kp F6>
+        , <&macro_release &kp LALT &kp LCTRL>;
+    };
+
+    tty7: tty7 {
+      label = "TTY7";
+      compatible = "zmk,behavior-macro";
+      #binding-cells = <0>;
+      wait-ms = <20>;
+      tap-ms = <20>;
+      bindings
+        = <&macro_press &kp LCTRL &kp LALT>
+        , <&macro_tap &kp F7>
+        , <&macro_release &kp LALT &kp LCTRL>;
+    };
+
+    tty8: tty8 {
+      label = "TTY8";
+      compatible = "zmk,behavior-macro";
+      #binding-cells = <0>;
+      wait-ms = <20>;
+      tap-ms = <20>;
+      bindings
+        = <&macro_press &kp LCTRL &kp LALT>
+        , <&macro_tap &kp F8>
+        , <&macro_release &kp LALT &kp LCTRL>;
+    };
+
+    tty9: tty9 {
+      label = "TTY9";
+      compatible = "zmk,behavior-macro";
+      #binding-cells = <0>;
+      wait-ms = <20>;
+      tap-ms = <20>;
+      bindings
+        = <&macro_press &kp LCTRL &kp LALT>
+        , <&macro_tap &kp F9>
+        , <&macro_release &kp LALT &kp LCTRL>;
+    };
+
+    ctrl_alt_del: ctrl_alt_del {
+      label = "CTRL_ALT_DELETE";
+      compatible = "zmk,behavior-macro";
+      #binding-cells = <0>;
+      wait-ms = <20>;
+      tap-ms = <20>;
+      bindings
+        = <&macro_press &kp LCTRL &kp LALT>
+        , <&macro_tap &kp DEL>
+        , <&macro_release &kp LALT &kp LCTRL>;
     };
 
     gpg: gpg {
@@ -73,6 +193,86 @@
       bindings = <&kp LSHFT>, <&caps_word>;
     };
 
+    td_tty1: tap-dance-tty1 {
+      compatible = "zmk,behavior-tap-dance";
+      label = "TAP_DANCE_TTY1";
+      #binding-cells = <0>;
+      tapping-term-ms = <200>;
+      bindings = <&kp F1>, <&tty1>;
+    };
+
+    td_tty2: tap-dance-tty2 {
+      compatible = "zmk,behavior-tap-dance";
+      label = "TAP_DANCE_TTY2";
+      #binding-cells = <0>;
+      tapping-term-ms = <200>;
+      bindings = <&kp F2>, <&tty2>;
+    };
+
+    td_tty3: tap-dance-tty3 {
+      compatible = "zmk,behavior-tap-dance";
+      label = "TAP_DANCE_TTY3";
+      #binding-cells = <0>;
+      tapping-term-ms = <200>;
+      bindings = <&kp F3>, <&tty3>;
+    };
+
+    td_tty4: tap-dance-tty4 {
+      compatible = "zmk,behavior-tap-dance";
+      label = "TAP_DANCE_TTY4";
+      #binding-cells = <0>;
+      tapping-term-ms = <200>;
+      bindings = <&kp F4>, <&tty4>;
+    };
+
+    td_tty5: tap-dance-tty5 {
+      compatible = "zmk,behavior-tap-dance";
+      label = "TAP_DANCE_TTY5";
+      #binding-cells = <0>;
+      tapping-term-ms = <200>;
+      bindings = <&kp F5>, <&tty5>;
+    };
+
+    td_tty6: tap-dance-tty6 {
+      compatible = "zmk,behavior-tap-dance";
+      label = "TAP_DANCE_TTY6";
+      #binding-cells = <0>;
+      tapping-term-ms = <200>;
+      bindings = <&kp F6>, <&tty6>;
+    };
+
+    td_tty7: tap-dance-tty7 {
+      compatible = "zmk,behavior-tap-dance";
+      label = "TAP_DANCE_TTY7";
+      #binding-cells = <0>;
+      tapping-term-ms = <200>;
+      bindings = <&kp F7>, <&tty7>;
+    };
+
+    td_tty8: tap-dance-tty8 {
+      compatible = "zmk,behavior-tap-dance";
+      label = "TAP_DANCE_TTY8";
+      #binding-cells = <0>;
+      tapping-term-ms = <200>;
+      bindings = <&kp F8>, <&tty8>;
+    };
+
+    td_tty9: tap-dance-tty9 {
+      compatible = "zmk,behavior-tap-dance";
+      label = "TAP_DANCE_TTY9";
+      #binding-cells = <0>;
+      tapping-term-ms = <200>;
+      bindings = <&kp F9>, <&tty9>;
+    };
+
+    td_del: tap-dance-delete {
+      compatible = "zmk,behavior-tap-dance";
+      label = "TAP_DANCE_DELETE";
+      #binding-cells = <0>;
+      tapping-term-ms = <200>;
+      bindings = <&kp DEL>, <&ctrl_alt_del>;
+    };
+
 	};
 
   keymap {
@@ -96,27 +296,27 @@
     };
     mac_layer {
         // --------------------------------------------------------------------------------------------
-        // Transparent except for modifiers: physical Ctrl = Cmd, Win = Ctrl, Alt = Option.
+        // Transparent except for modifiers: Ctrl Option Command / Command Option.
         // --------------------------------------------------------------------------------------------
       bindings = <
         &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
         &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
         &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
         &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &mo FN
-        &kp LGUI &kp LCTRL &kp LALT            &trans                           &kp RALT &kp RGUI &trans &trans &trans
+        &kp LCTRL &kp LALT &kp LGUI            &trans                           &kp RGUI &kp RALT &trans &trans &trans
       >;
       sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
     };
     raise {
         // ------------------------------------------------------------------------------------------
-        // |GRAVE| F1  | F2  | F3  | F4  | F5  | F6  | F7  | F8  | F9  | F10 | F11 | F12 | DEL | DEL |
+        // |GRAVE|F1/T1|F2/T2|F3/T3|F4/T4|F5/T5|F6/T6|F7/T7|F8/T8|F9/T9| F10 | F11 | F12 |D/CAD|D/CAD|
         // | TAB  |  Q  |  W  |  E  | HUI | HUD |  Y  |  U  | INS |  O  |PSCRN| SLCK| P_B | RGB_TOG  |
         // | CAPS  |  A  |  S  |  D  | BRI | BRD |  H  |  J  |  K  |  L  | HOME| PGUP|      BOOT     |
         // | SHFT |NONE|VOLDN|VOLUP|MUTE|BLINC|BLDEC|  N  |  M  |  ,  | END | PGDN | SHFT|BL_TOG| FN |
         // | LINUX | NONE |  MAC  |           SPACE              | RALT| CTRL | BT_PRV |BT_CLR| BT_NXT |
         // ------------------------------------------------------------------------------------------
       bindings = <
-        &kp GRAVE &kp F1 &kp F2 &kp F3 &kp F4 &kp F5 &kp F6 &kp F7 &kp  F8   &kp  F9 &kp  F10  &kp F11 &kp F12   &kp DEL &kp DEL
+        &kp GRAVE &td_tty1 &td_tty2 &td_tty3 &td_tty4 &td_tty5 &td_tty6 &td_tty7 &td_tty8 &td_tty9 &kp  F10  &kp F11 &kp F12   &td_del &td_del
         &gpg &trans &trans &trans &rgb_ug RGB_HUI &rgb_ug RGB_HUD &trans &trans &kp INS &trans &kp PSCRN &kp SLCK &kp PAUSE_BREAK &rgb_ug RGB_TOG
         &trans    &trans &trans &trans &rgb_ug RGB_BRI &rgb_ug RGB_BRD &trans &trans &trans &trans &kp HOME  &kp PG_UP   &bootloader
         &trans &none &kp C_VOL_DN &kp C_VOL_UP &kp C_MUTE &bl BL_INC &bl BL_DEC &trans &trans &trans &kp END &kp PG_DN &trans &bl BL_TOG &trans
