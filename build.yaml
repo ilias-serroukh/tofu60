@@ -13,4 +13,5 @@
 #
 ---
 include:
-  - board: bt60_v2
+  - board: "bt60@2.0.0//zmk"
+    artifact-name: bt60_v2

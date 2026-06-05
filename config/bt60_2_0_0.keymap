@@ -11,7 +11,7 @@
 
 / {
   chosen {
-    zmk,matrix_transform = &all_1u_transform;
+    zmk,physical-layout = &layout_60_all1u;
   };
 
   macros {

@@ -1,0 +1,11 @@
+.direnv/
+.west/
+
+build/
+bootloader/
+modules/
+tools/
+zephyr/
+zmk/
+
+*.uf2
