@@ -18,6 +18,18 @@
     zmk,physical-layout = &layout_60_all1u;
   };
 
+  combos {
+    compatible = "zmk,combos";
+
+    af_fn {
+      timeout-ms = <40>;
+      key-positions = <30 33>;
+      bindings = <&mo FN>;
+      layers = <LINUX MAC>;
+      slow-release;
+    };
+  };
+
   macros {
     linux_mode: linux_mode {
       label = "LINUX_MODE";
@@ -311,14 +323,14 @@
         // ------------------------------------------------------------------------------------------
         // |GRAVE|F1/T1|F2/T2|F3/T3|F4/T4|F5/T5|F6/T6|F7/T7|F8/T8|F9/T9| F10 | F11 | F12 |D/CAD|D/CAD|
         // | TAB  |  Q  |  W  |  E  | HUI | HUD |  Y  |  U  | INS |  O  |PSCRN| SLCK| P_B | RGB_TOG  |
-        // | CAPS  |  A  |  S  |  D  | BRI | BRD |  H  |  J  |  K  |  L  | HOME| PGUP|      BOOT     |
+        // | CAPS  |  A  |  S  |  D  | BRI | BRD |LEFT |DOWN | UP  |RIGHT| HOME| PGUP|      BOOT     |
         // | SHFT |NONE|VOLDN|VOLUP|MUTE|BLINC|BLDEC|  N  |  M  |  ,  | END | PGDN | SHFT|BL_TOG| FN |
         // | LINUX | NONE |  MAC  |           SPACE              | RALT| CTRL | BT_PRV |BT_CLR| BT_NXT |
         // ------------------------------------------------------------------------------------------
       bindings = <
         &kp GRAVE &td_tty1 &td_tty2 &td_tty3 &td_tty4 &td_tty5 &td_tty6 &td_tty7 &td_tty8 &td_tty9 &kp  F10  &kp F11 &kp F12   &td_del &td_del
         &gpg &trans &trans &trans &rgb_ug RGB_HUI &rgb_ug RGB_HUD &trans &trans &kp INS &trans &kp PSCRN &kp SLCK &kp PAUSE_BREAK &rgb_ug RGB_TOG
-        &trans    &trans &trans &trans &rgb_ug RGB_BRI &rgb_ug RGB_BRD &trans &trans &trans &trans &kp HOME  &kp PG_UP   &bootloader
+        &trans    &trans &trans &trans &rgb_ug RGB_BRI &rgb_ug RGB_BRD &kp LEFT &kp DOWN &kp UP &kp RIGHT &kp HOME  &kp PG_UP   &bootloader
         &trans &none &kp C_VOL_DN &kp C_VOL_UP &kp C_MUTE &bl BL_INC &bl BL_DEC &trans &trans &trans &kp END &kp PG_DN &trans &bl BL_TOG &trans
         &linux_mode &none  &mac_mode              &trans                            &trans  &trans &bt BT_PRV   &bt BT_CLR &bt BT_NXT
       >;
